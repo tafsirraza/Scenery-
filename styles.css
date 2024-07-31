@@ -1,0 +1,145 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #87CEEB;
+}
+
+.scenery {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #87CEEB, #fff);
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    z-index: 2;
+    animation: sunRise 10s infinite alternate;
+}
+
+@keyframes sunRise {
+    0% { top: 20%; }
+    100% { top: 10%; }
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 3;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(to bottom, #4D4D4D, #262626);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 3;
+}
+
+.mountain1 {
+    left: 15%;
+    height: 80%;
+    width: 70%;
+}
+
+.mountain2 {
+    left: 55%;
+    height: 70%;
+    width: 60%;
+    background: linear-gradient(to bottom, #5A5A5A, #333);
+}
+
+.lake {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, #76C7C0, #4DA6A6);
+    z-index: 4;
+    overflow: hidden;
+}
+
+.reflection {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #4DA6A6, rgba(76, 199, 192, 0.5));
+    opacity: 0.5;
+    animation: waterMovement 5s infinite ease-in-out;
+}
+
+@keyframes waterMovement {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-20px); }
+}
+
+.trees {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    height: 30%;
+    z-index: 5;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tree {
+    position: relative;
+    width: 20px;
+    height: 60px;
+    background: #8B4513;
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    left: -40px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #228B22, #006400);
+    border-radius: 50%;
+}
+
+.birds {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 200px;
+    height: 100px;
+    z-index: 6;
+    background: url('https://img.icons8.com/ios-filled/50/000000/bird.png') repeat-x;
+    animation: birdFly 10s infinite linear;
+}
+
+@keyframes birdFly {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); }
+}
+
